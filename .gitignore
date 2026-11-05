@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+*.csv.bak
+# dados brutos do Kaggle nao sao versionados
+data/
+accounts.csv
+churn_events.csv
