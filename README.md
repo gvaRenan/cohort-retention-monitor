@@ -37,6 +37,10 @@ Input files need these columns: `accounts.csv` with `account_id`, `signup_date`;
 
 The output is a table of `% churned` by months since signup, per cohort. Points that cannot be observed yet (cohort too young for that month) are left empty instead of being treated as zero. An alert is printed when the churn at month 2 of the newest cohort is at least 3x the oldest cohort's.
 
+### Statistical version with lifelines
+
+[`examples/km_by_signup_cohort.py`](examples/km_by_signup_cohort.py) compares cohorts with Kaplan-Meier curves and a log-rank test on synthetic data, using the [lifelines](https://github.com/CamDavidsonPilon/lifelines) library: `uv run --with lifelines --with matplotlib python examples/km_by_signup_cohort.py`.
+
 ### Data
 
 The example numbers come from the public Kaggle dataset [SaaS Subscription & Churn Analytics](https://www.kaggle.com/datasets/rivalytics/saas-subscription-and-churn-analytics-dataset) (MIT license, synthetic data). The raw dataset is not included here: download it from Kaggle.
@@ -69,6 +73,10 @@ Opções: `--cohort_freq` define o tamanho da cohort como frequência de períod
 Colunas necessárias: `accounts.csv` com `account_id`, `signup_date`; `churn_events.csv` com `account_id`, `churn_date`.
 
 A saída é uma tabela de `% churned` por meses desde o signup, por cohort. Pontos ainda não observáveis (cohort muito jovem) ficam vazios, não zerados. O alerta aparece quando o churn no mês 2 da cohort mais recente é pelo menos 3x o da mais antiga.
+
+### Versão estatística com lifelines
+
+[`examples/km_by_signup_cohort.py`](examples/km_by_signup_cohort.py) compara as cohorts com curvas de Kaplan-Meier e teste log-rank em dados sintéticos, usando a biblioteca [lifelines](https://github.com/CamDavidsonPilon/lifelines).
 
 ### Dados
 
